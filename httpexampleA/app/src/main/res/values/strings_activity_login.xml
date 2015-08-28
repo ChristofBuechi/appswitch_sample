@@ -1,0 +1,5 @@
+<resources>
+
+    <!-- Strings related to login -->
+    <string name="action_sign_in">Start other activity</string>
+</resources>
