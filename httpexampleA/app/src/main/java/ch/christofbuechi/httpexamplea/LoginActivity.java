@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void run() {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.setData(Uri.parse("market://details?id=" + "ch.bcv.tradedirect"));
+                    intent.setData(Uri.parse("market://details?id=" + "ch.hsr.hsrlunch"));
                     startActivity(intent);
                 }
             }, 500);
