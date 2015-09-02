@@ -31,9 +31,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="UserCheckReceiver" >
+        <receiver android:name="UserCheckReceiverRespond" >
             <intent-filter>
-                <action android:name="ch.christofbuechi.android.mybroadcast" />
+                <action android:name="ch.christofbuechi.android.mybroadcastRespond" />
             </intent-filter>
         </receiver>
     </application>

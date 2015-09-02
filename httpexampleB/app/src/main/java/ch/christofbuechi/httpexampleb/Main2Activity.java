@@ -1,9 +1,12 @@
 package ch.christofbuechi.httpexampleb;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Main2Activity extends ActionBarActivity {
@@ -17,6 +20,24 @@ public class Main2Activity extends ActionBarActivity {
         setContentView(R.layout.activity_main2);
         sessionId = getIntent().getStringExtra("sessionId");
         userID = getIntent().getStringExtra("userID");
+
+
+        Button buttonCheckUserHA123456 = (Button) findViewById(R.id.checkuserHA123456);
+        buttonCheckUserHA123456.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkUserHA123456();
+            }
+        });
+
+        Button buttonCheckUserHA654321 = (Button) findViewById(R.id.checkuserHA654321);
+        buttonCheckUserHA654321.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkUserHA654321();
+            }
+        });
+
     }
 
     @Override
@@ -30,6 +51,21 @@ public class Main2Activity extends ActionBarActivity {
             mTextView.setText("Im started normal!! :-(");
         }
     }
+
+    private void checkUserHA654321() {
+        Intent intent = new Intent();
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        intent.putExtra("User", "HA654321");
+        sendBroadcast(intent);
+    }
+
+    private void checkUserHA123456() {
+        Intent intent = new Intent();
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        intent.putExtra("User", "HA123456");
+        sendBroadcast(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
