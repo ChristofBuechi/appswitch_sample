@@ -14,6 +14,9 @@ public class UserCheckReceiverRespond extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
 
+        boolean isProvisioned = intent.getBooleanExtra("isProvisioned");
+        Toast.makeText(context, "User is Provisioned: " + isProvisioned,
+                Toast.LENGTH_LONG).show();
     }
 
 
