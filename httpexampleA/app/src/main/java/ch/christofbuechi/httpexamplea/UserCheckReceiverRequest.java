@@ -14,20 +14,20 @@ public class UserCheckReceiverRequest extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
 
-            String userToCheck = intent.getStringExtra("User");
-            Log.d(this.getClass().getName(), "User to Check: " + userToCheck);
+        String userToCheck = intent.getStringExtra("User");
+        Log.d(this.getClass().getName(), "User to Check: " + userToCheck);
 
         Boolean isProvisioned = checkIfUserIsProvisioned(userToCheck);
 
         if (isProvisioned) {
             Log.d(this.getClass().getName(), "User is Provisioned: " + userToCheck);
-            Toast.makeText(context, "User is Provisioned: " + String.valueOf(isProvisioned),
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(context, "User is Provisioned: " + String.valueOf(isProvisioned),
+//                    Toast.LENGTH_LONG).show();
         }
-            Intent intent1 = new Intent();
-            intent1.setAction("ch.christofbuechi.android.mybroadcastRespond");
-                intent1.putExtra("isProvisioned", isProvisioned);
-            context.sendBroadcast(intent1);
+        Intent respondIntent = new Intent();
+        respondIntent.setAction("ch.christofbuechi.android.mybroadcastRespond");
+        respondIntent.putExtra("isProvisioned", isProvisioned);
+        context.sendBroadcast(respondIntent);
 
 
     }
