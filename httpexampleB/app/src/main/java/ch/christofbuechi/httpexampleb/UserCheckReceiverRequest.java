@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;import java.lang.Boolean;import java.lang.Override;import java.lang.String;
 
 /**
  * Created by bui on 02.09.15.

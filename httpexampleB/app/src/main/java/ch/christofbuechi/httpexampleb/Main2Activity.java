@@ -1,12 +1,7 @@
 package ch.christofbuechi.httpexampleb;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
 public class Main2Activity extends ActionBarActivity {
@@ -28,7 +23,8 @@ public class Main2Activity extends ActionBarActivity {
 
         mTextView = (TextView) findViewById(R.id.sourceTextView);
         if (sessionId != null && sessionId.length() > 0 && userID != null && userID.length() > 0) {
-            mTextView.setText("Your sessionID: " + sessionId + "\n" + "I'm started by Intent" + "\n" + "Login as user: " + userID);
+            String text = "Your sessionID: %1$s" + "\n" + "Im started by Intent" + "\n" + "Login as user: %2$s";
+            mTextView.setText(String.format(text, sessionId, userID));
         } else {
             mTextView.setText("Im started normal!! :-(");
         }
