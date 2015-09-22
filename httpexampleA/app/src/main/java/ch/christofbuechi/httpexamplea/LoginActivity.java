@@ -27,9 +27,6 @@ public class LoginActivity extends AppCompatActivity {
                 attemptStartNewActivity();
             }
         });
-
-
-
     }
 
     public void attemptStartNewActivity() {
@@ -68,10 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, 500);
         }
-    }
-
-    private void startActivityForResult(Intent intent) {
-        Log.d("LoginActivity", "httpexampleA - startActivityForResult");
     }
 }
 

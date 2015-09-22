@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ch.christofbuechi.httpexampleb" >
 
-    <uses-permission android:name="ch.christofbuechi.startLoginActivity" />
-
     <permission
         android:name="ch.christofbuechi.startLoginActivity"
         android:label="my_Login_Activity_Start"
