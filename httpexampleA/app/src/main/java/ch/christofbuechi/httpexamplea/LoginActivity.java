@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +26,22 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 attemptStartNewActivity();
+            }
+        });
+
+        Button buttonCheckUserHA123456 = (Button) findViewById(R.id.checkuserHA123456);
+        buttonCheckUserHA123456.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkUserHA123456();
+            }
+        });
+
+        Button buttonCheckUserHA654321 = (Button) findViewById(R.id.checkuserHA654321);
+        buttonCheckUserHA654321.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkUserHA654321();
             }
         });
     }
@@ -44,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setComponent(new ComponentName("ch.christofbuechi.httpexampleb", "ch.christofbuechi.httpexampleb.IntentStartActivity"));
                     intent.putExtra("userID", "HA123456");
-                    intent.putExtra("sessionId", "65464541645445151554");
+                    intent.putExtra("sessionId", UUID.randomUUID().toString());
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
@@ -65,6 +82,20 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, 500);
         }
+    }
+
+    private void checkUserHA654321() {
+        Intent intent = new Intent();
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        intent.putExtra("User", "HA654321");
+        sendBroadcast(intent);
+    }
+
+    private void checkUserHA123456() {
+        Intent intent = new Intent();
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        intent.putExtra("User", "HA123456");
+        sendBroadcast(intent);
     }
 }
 

@@ -1,10 +1,10 @@
-package ch.christofbuechi.httpexamplea;
+package ch.christofbuechi.httpexampleb;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
+import android.widget.Toast;import java.lang.Boolean;import java.lang.Override;import java.lang.String;
 
 /**
  * Created by bui on 02.09.15.
@@ -33,7 +33,7 @@ public class UserCheckReceiverRequest extends BroadcastReceiver {
     }
 
     private boolean checkIfUserIsProvisioned(String userToCheck) {
-        //actually there is just one user provisioned
+        //actually there is just one user provisioned - it abstracts the check
         if ("HA123456".equals(userToCheck))
             return true;
         else

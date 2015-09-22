@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">httpexampleB</string>
 
-    <string name="hello_world">Hello, I\'m the faked HSR application Application!</string>
-    <string name="hello_main">Hello, I\'m Main!</string>
+    <string name="hello_world">Hello, I\'m the appswitch example Application!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

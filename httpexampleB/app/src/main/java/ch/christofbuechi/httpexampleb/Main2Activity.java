@@ -20,24 +20,6 @@ public class Main2Activity extends ActionBarActivity {
         setContentView(R.layout.activity_main2);
         sessionId = getIntent().getStringExtra("sessionId");
         userID = getIntent().getStringExtra("userID");
-
-
-        Button buttonCheckUserHA123456 = (Button) findViewById(R.id.checkuserHA123456);
-        buttonCheckUserHA123456.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkUserHA123456();
-            }
-        });
-
-        Button buttonCheckUserHA654321 = (Button) findViewById(R.id.checkuserHA654321);
-        buttonCheckUserHA654321.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkUserHA654321();
-            }
-        });
-
     }
 
     @Override
@@ -50,42 +32,5 @@ public class Main2Activity extends ActionBarActivity {
         } else {
             mTextView.setText("Im started normal!! :-(");
         }
-    }
-
-    private void checkUserHA654321() {
-        Intent intent = new Intent();
-        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
-        intent.putExtra("User", "HA654321");
-        sendBroadcast(intent);
-    }
-
-    private void checkUserHA123456() {
-        Intent intent = new Intent();
-        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
-        intent.putExtra("User", "HA123456");
-        sendBroadcast(intent);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main2, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

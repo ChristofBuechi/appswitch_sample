@@ -25,9 +25,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="UserCheckReceiverRequest" >
+        <receiver android:name=".UserCheckReceiverRespond" >
             <intent-filter>
-                <action android:name="ch.christofbuechi.android.mybroadcastRequest" />
+                <action android:name="ch.christofbuechi.android.mybroadcastRespond" />
             </intent-filter>
         </receiver>
 

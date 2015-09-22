@@ -29,11 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="UserCheckReceiverRespond" >
+        <receiver android:name=".UserCheckReceiverRequest" >
             <intent-filter>
-                <action android:name="ch.christofbuechi.android.mybroadcastRespond" />
+                <action android:name="ch.christofbuechi.android.mybroadcastRequest" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

@@ -1,10 +1,10 @@
-package ch.christofbuechi.httpexampleb;
+package ch.christofbuechi.httpexamplea;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
+import android.widget.Toast;import java.lang.Override;
 
 /**
  * Created by bui on 02.09.15.
