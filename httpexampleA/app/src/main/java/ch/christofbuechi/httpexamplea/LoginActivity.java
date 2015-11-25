@@ -1,12 +1,18 @@
 package ch.christofbuechi.httpexamplea;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,6 +21,8 @@ import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+    public static final String ACTION = "mypersonalbroadcast";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkUserHA654321();
+            }
+        });
+
+        Button buttonCheckUserHA111111 = (Button) findViewById(R.id.checkuserHA111111);
+        buttonCheckUserHA111111.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkUserHA111111();
             }
         });
     }
@@ -96,6 +112,37 @@ public class LoginActivity extends AppCompatActivity {
         intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
         intent.putExtra("User", "HA123456");
         sendBroadcast(intent);
+    }
+
+
+    private void checkUserHA111111() {
+//        IntentFilter filter = new IntentFilter(ACTION);
+//        registerReceiver(new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                Bundle results = getResultExtras(true);
+//                String trail = results.getString("User");
+//                results.putString("User", trail + "->" + "receiver" + "isprovisioned");
+//                Log.i("receiver", "Same Class Receiver");
+//            }
+//        }, filter);
+
+
+//        Intent intent = new Intent(ACTION);
+//        intent.putExtra("User", "HA111111");
+//
+//        sendOrderedBroadcast(intent, null, new BroadcastReceiver() {
+//            @SuppressLint("NewApi")
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                Bundle results = getResultExtras(true);
+//
+//                String trail = results.getString("User");
+////                results.putString("User", trail + "->" + "sometext");
+//                Log.i(this.getClass().getName(), "Final Result Receiver = " + results.getString("User", "nil"));
+//            }
+//        }, null, Activity.RESULT_OK, null, null);
+//        sendBroadcast(intent);
     }
 }
 

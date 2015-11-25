@@ -67,6 +67,22 @@
                         android:textStyle="bold"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/checkuserHA111111"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="CheckUser HA111111"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
