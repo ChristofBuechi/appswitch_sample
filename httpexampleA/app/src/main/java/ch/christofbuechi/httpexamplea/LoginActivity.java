@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -94,22 +95,25 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void checkUserHA654321() {
-        Intent intent = new Intent();
-        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
-        intent.putExtra("User", "HA654321");
-        sendBroadcast(intent);
-    }
-
     private void checkUserHA123456() {
+        Log.d("BroadcastQueue", "send: checkUserHA123456");
         Intent intent = new Intent();
         intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
         intent.putExtra("User", "HA123456");
+        sendBroadcast(intent);
+    }
+
+    private void checkUserHA654321() {
+        Log.d("BroadcastQueue", "send: checkUserHA654321");
+        Intent intent = new Intent();
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        intent.putExtra("User", "HA654321");
         sendBroadcast(intent, "ch.christofbuechi.httpB_perm");
     }
 
 
     private void checkUserHA111111() {
+        Log.d("BroadcastQueue", "send: checkUserHA111111");
         Intent intent = new Intent(ACTION);
         intent.putExtra("User", "HA111111");
         intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
