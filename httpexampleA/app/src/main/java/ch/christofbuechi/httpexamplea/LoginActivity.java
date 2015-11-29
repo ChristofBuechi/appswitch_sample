@@ -1,18 +1,12 @@
 package ch.christofbuechi.httpexamplea;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -111,11 +105,18 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
         intent.putExtra("User", "HA123456");
-        sendBroadcast(intent);
+        sendBroadcast(intent, "ch.christofbuechi.httpB_perm");
     }
 
 
     private void checkUserHA111111() {
+        Intent intent = new Intent(ACTION);
+        intent.putExtra("User", "HA111111");
+        intent.setAction("ch.christofbuechi.android.mybroadcastRequest");
+        sendOrderedBroadcast(intent, "ch.christofbuechi.httpB_perm");
+
+
+
 //        IntentFilter filter = new IntentFilter(ACTION);
 //        registerReceiver(new BroadcastReceiver() {
 //            @Override
@@ -142,7 +143,6 @@ public class LoginActivity extends AppCompatActivity {
 //                Log.i(this.getClass().getName(), "Final Result Receiver = " + results.getString("User", "nil"));
 //            }
 //        }, null, Activity.RESULT_OK, null, null);
-//        sendBroadcast(intent);
     }
 }
 

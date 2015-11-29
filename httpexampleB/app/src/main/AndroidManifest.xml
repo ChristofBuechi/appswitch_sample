@@ -7,11 +7,15 @@
         android:label="my_Login_Activity_Start"
         android:protectionLevel="dangerous" />
 
+    <permission android:name="ch.christofbuechi.httpB_perm" android:protectionLevel="dangerous"></permission>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".IntentStartActivity"
             android:label="@string/app_name"
@@ -21,6 +25,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Main2Activity"
             android:label="httpExampleB" >
@@ -29,7 +34,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".UserCheckReceiverRequest" >
+
+        <receiver android:name=".UserCheckReceiverRequest"
+            android:permission="ch.christofbuechi.httpB_perm">
             <intent-filter>
                 <action android:name="ch.christofbuechi.android.mybroadcastRequest" />
             </intent-filter>

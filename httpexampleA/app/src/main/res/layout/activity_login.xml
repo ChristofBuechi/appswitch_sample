@@ -48,7 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="CheckUser HA123456"
+                        android:text="CheckUser HA123456 without Permission"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="CheckUser HA654321"
+                        android:text="CheckUser HA654321 with Permission"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -79,7 +79,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="CheckUser HA111111"
+                        android:text="CheckUser HA111111 send orderedBroadcast"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
